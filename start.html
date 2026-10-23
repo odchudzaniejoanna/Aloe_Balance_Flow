@@ -1,0 +1,746 @@
+
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Start | Aloe Balance Flow</title>
+  <meta name="description" content="Witaj w Aloe Balance Flow. Poznaj pierwsze kroki, wartości i zasady działania w zespole Aloe Balance.">
+
+  <style>
+    :root {
+      --cream: #F9F1E7;
+      --linen: #F4F1EC;
+      --rose: #C18A89;
+      --rose-deep: #AD6C70;
+      --olive: #464A2F;
+      --gold: #C6A15B;
+      --text: #51463D;
+      --muted: #89776C;
+      --white: #FFF9F4;
+      --line: #E9D1C8;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      background: var(--cream);
+      color: var(--text);
+      font-family: Georgia, "Times New Roman", serif;
+      line-height: 1.7;
+    }
+
+    a {
+      color: inherit;
+    }
+
+    .site-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 18px;
+      padding: 18px 5%;
+      background: var(--white);
+      border-bottom: 1px solid var(--line);
+    }
+
+    .brand-small {
+      color: var(--rose-deep);
+      text-decoration: none;
+      font-size: 1.25rem;
+      letter-spacing: .03em;
+    }
+
+    .back-button {
+      display: inline-block;
+      padding: 10px 20px;
+      background: var(--rose);
+      color: white;
+      border-radius: 30px;
+      text-decoration: none;
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: .88rem;
+      transition: background .2s ease;
+      text-align: center;
+    }
+
+    .back-button:hover {
+      background: var(--rose-deep);
+    }
+
+    .main-nav {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 10px 22px;
+      padding: 15px 5%;
+      background: var(--white);
+      border-bottom: 1px solid var(--line);
+    }
+
+    .main-nav a {
+      text-decoration: none;
+      font-size: .98rem;
+    }
+
+    .main-nav a:hover,
+    .main-nav a[aria-current="page"] {
+      color: var(--rose-deep);
+    }
+
+    .hero {
+      padding: 72px 7% 78px;
+      text-align: center;
+      background:
+        radial-gradient(ellipse at top left,
+          rgba(193,138,137,.19), transparent 60%),
+        linear-gradient(135deg, #FFF8F1, #F1E1DA);
+      border-bottom: 1px solid var(--line);
+    }
+
+    .ornament {
+      margin-bottom: 14px;
+      color: var(--gold);
+      font-size: 2rem;
+      letter-spacing: .3em;
+    }
+
+    .eyebrow {
+      margin: 0 0 14px;
+      color: var(--muted);
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: .75rem;
+      letter-spacing: .22em;
+      text-transform: uppercase;
+    }
+
+    h1, h2, h3 {
+      color: var(--olive);
+      font-weight: 400;
+      line-height: 1.2;
+    }
+
+    h1 {
+      margin: 0 0 18px;
+      font-size: clamp(2.8rem, 7vw, 5.2rem);
+    }
+
+    h1 span {
+      display: block;
+      color: var(--rose);
+      font-style: italic;
+    }
+
+    .hero p {
+      max-width: 680px;
+      margin: 0 auto 26px;
+      font-size: 1.12rem;
+    }
+
+    .hero-note {
+      color: var(--muted);
+      font-size: .94rem !important;
+    }
+
+    .section {
+      padding: 58px 6%;
+    }
+
+    .section-heading {
+      max-width: 760px;
+      margin: 0 auto 34px;
+      text-align: center;
+    }
+
+    .section-heading h2 {
+      margin: 0 0 12px;
+      font-size: clamp(1.8rem, 4vw, 2.5rem);
+    }
+
+    .section-heading p {
+      margin: 0;
+      color: var(--muted);
+    }
+
+    .welcome-panel {
+      max-width: 920px;
+      margin: 0 auto;
+      padding: 32px;
+      background: var(--white);
+      border: 1px solid var(--line);
+      border-radius: 14px;
+    }
+
+    .welcome-panel h2 {
+      margin-top: 0;
+      font-size: 1.8rem;
+    }
+
+    .welcome-panel p:last-child {
+      margin-bottom: 0;
+    }
+
+    .steps-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 20px;
+      max-width: 1120px;
+      margin: 0 auto;
+    }
+
+    .step-card {
+      padding: 26px 22px;
+      background: var(--white);
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      box-shadow: 0 5px 16px rgba(85, 62, 49, .035);
+    }
+
+    .step-number {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 46px;
+      height: 46px;
+      margin-bottom: 14px;
+      border: 1px solid var(--gold);
+      border-radius: 50%;
+      color: var(--rose-deep);
+      font-size: 1.15rem;
+    }
+
+    .step-card h3 {
+      margin: 0 0 10px;
+      font-size: 1.3rem;
+    }
+
+    .step-card p {
+      margin: 0;
+      font-size: .96rem;
+    }
+
+    .step-card a {
+      display: inline-block;
+      margin-top: 14px;
+      color: var(--rose-deep);
+      font-size: .9rem;
+      text-decoration: none;
+    }
+
+    .step-card a:hover {
+      text-decoration: underline;
+    }
+
+    .values-section {
+      background: linear-gradient(120deg, #F0DEDA, #F9EEE8);
+    }
+
+    .values-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 18px;
+      max-width: 950px;
+      margin: 0 auto;
+    }
+
+    .value-item {
+      padding: 22px;
+      border-left: 2px solid var(--gold);
+      background: rgba(255, 249, 244, .65);
+    }
+
+    .value-item h3 {
+      margin: 0 0 7px;
+      font-size: 1.2rem;
+    }
+
+    .value-item p {
+      margin: 0;
+      font-size: .95rem;
+    }
+
+    .next-step {
+      max-width: 850px;
+      margin: 0 auto;
+      padding: 35px;
+      text-align: center;
+      background: var(--white);
+      border: 1px solid var(--line);
+      border-radius: 14px;
+    }
+
+    .next-step h2 {
+      margin-top: 0;
+      font-size: 1.8rem;
+    }
+
+    .next-step p {
+      margin-bottom: 24px;
+    }
+
+    .button {
+      display: inline-block;
+      padding: 13px 25px;
+      background: var(--rose);
+      color: white;
+      border-radius: 30px;
+      text-decoration: none;
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: .9rem;
+    }
+
+    .button:hover {
+      background: var(--rose-deep);
+    }
+
+    .site-footer {
+      background: var(--linen);
+      border-top: 1px solid var(--line);
+    }
+
+    .footer-main {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1.4fr;
+      gap: 24px;
+      align-items: center;
+      padding: 40px 5%;
+    }
+
+    .footer-brand {
+      color: var(--olive);
+      font-size: 1.7rem;
+      line-height: 1.2;
+      text-align: center;
+    }
+
+    .footer-brand span {
+      display: block;
+      color: var(--rose);
+      font-style: italic;
+    }
+
+    .footer-leader {
+      padding: 8px 20px;
+      text-align: center;
+      border-left: 1px solid var(--line);
+      border-right: 1px solid var(--line);
+    }
+
+    .footer-leader strong {
+      display: block;
+      color: var(--rose-deep);
+      font-size: 1.8rem;
+      font-style: italic;
+      font-weight: 400;
+    }
+
+    .footer-leader p {
+      margin: 0;
+      font-size: .88rem;
+    }
+
+    .footer-leader .tagline {
+      margin-top: 10px;
+      color: var(--rose-deep);
+    }
+
+    .contact-list {
+      display: grid;
+      gap: 8px;
+      font-size: .88rem;
+    }
+
+    .contact-list a {
+      overflow-wrap: anywhere;
+      text-decoration: none;
+    }
+
+    .contact-list a:hover {
+      color: var(--rose-deep);
+    }
+
+    .contact-label {
+      display: inline-block;
+      width: 24px;
+      color: var(--rose-deep);
+    }
+
+    .footer-logo {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 100%;
+      padding: 18px 16px 22px;
+      background: var(--cream);
+    }
+
+    .footer-logo img {
+      display: block;
+      width: 260px;
+      max-width: 85%;
+      height: auto;
+      max-height: 220px;
+      object-fit: contain;
+      margin: 0 auto;
+    }
+
+    .copyright {
+      padding: 13px 16px;
+      background: #F0E5DE;
+      color: var(--muted);
+      text-align: center;
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: .75rem;
+    }
+
+    @media (max-width: 760px) {
+      .site-header {
+        align-items: flex-start;
+        flex-direction: column;
+        padding: 16px 5%;
+      }
+
+      .back-button {
+        align-self: flex-end;
+      }
+
+      .main-nav {
+        gap: 9px 17px;
+      }
+
+      .hero {
+        padding: 52px 6% 58px;
+      }
+
+      .section {
+        padding: 42px 5%;
+      }
+
+      .steps-grid {
+        grid-template-columns: 1fr;
+        gap: 14px;
+      }
+
+      .step-card {
+        padding: 23px;
+      }
+
+      .values-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .welcome-panel,
+      .next-step {
+        padding: 24px;
+      }
+
+      .footer-main {
+        grid-template-columns: 1fr;
+        gap: 22px;
+        padding: 30px 7%;
+      }
+
+      .footer-leader {
+        padding: 22px 0;
+        border: 0;
+        border-top: 1px solid var(--line);
+        border-bottom: 1px solid var(--line);
+      }
+
+      .contact-list {
+        justify-self: center;
+        width: 100%;
+        max-width: 320px;
+      }
+
+      .footer-logo img {
+        width: 230px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <header class="site-header">
+    <a class="brand-small" href="index.html">
+      Aloe Balance Flow
+    </a>
+
+    <a class="back-button" href="index.html">
+      ← Wróć do strony głównej
+    </a>
+  </header>
+
+  <nav class="main-nav" aria-label="Nawigacja główna">
+    <a href="index.html">Strona główna</a>
+    <a href="start.html" aria-current="page">Start</a>
+    <a href="produkt.html">Produkt</a>
+    <a href="rozwoj.html">Rozwój</a>
+    <a href="klientki-i-produkty.html">Klientki i produkty</a>
+    <a href="biznes.html">Biznes</a>
+    <a href="moj-plan.html">Mój plan</a>
+  </nav>
+
+  <main>
+
+    <section class="hero">
+      <div class="ornament" aria-hidden="true">⌁ ♡ ⌁</div>
+
+      <p class="eyebrow">Twoja droga zaczyna się tutaj</p>
+
+      <h1>
+        Witaj w Aloe Balance
+        <span>Flow</span>
+      </h1>
+
+      <p>
+        To Twoje miejsce na spokojny start, zdobywanie wiedzy
+        i budowanie własnej drogi w Aloe Balance.
+        Nie musisz wiedzieć wszystkiego od razu.
+        Wystarczy, że zrobisz pierwszy krok.
+      </p>
+
+      <p class="hero-note">
+        Rozwój · Zdrowie · Wolność
+      </p>
+    </section>
+
+    <section class="section">
+      <div class="welcome-panel">
+        <h2>Miło, że jesteś!</h2>
+
+        <p>
+          Aloe Balance Flow powstało po to, abyś mogła rozwijać się
+          we własnym tempie, korzystać ze sprawdzonych materiałów
+          i krok po kroku poznawać możliwości współpracy.
+        </p>
+
+        <p>
+          Nie chodzi o to, żeby robić wszystko naraz.
+          Chodzi o to, żeby wiedzieć, co zrobić teraz,
+          gdzie szukać pomocy i jaki może być Twój następny krok.
+        </p>
+
+        <p>
+          Potraktuj tę przestrzeń jak osobisty przewodnik.
+          Wracaj do niej wtedy, kiedy potrzebujesz wiedzy,
+          inspiracji lub uporządkowania swoich działań.
+        </p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="section-heading">
+        <p class="eyebrow">Krok po kroku</p>
+        <h2>Od czego zacząć?</h2>
+        <p>
+          Nie musisz poznawać całego świata Aloe Balance w jeden dzień.
+          Zacznij od podstaw, a potem przechodź do kolejnych obszarów.
+        </p>
+      </div>
+
+      <div class="steps-grid">
+
+        <article class="step-card">
+          <div class="step-number">01</div>
+          <h3>Poznaj naszą przestrzeń</h3>
+          <p>
+            Dowiedz się, czym jest Aloe Balance Flow,
+            jakie wartości są dla nas ważne i jak korzystać
+            z materiałów dostępnych na stronie.
+          </p>
+        </article>
+
+        <article class="step-card">
+          <div class="step-number">02</div>
+          <h3>Poznaj produkty</h3>
+          <p>
+            Zacznij od poznania oferty Forever, jej kategorii
+            i podstawowych informacji, które pomogą Ci
+            świadomie rozmawiać z klientkami.
+          </p>
+          <a href="produkt.html">Przejdź do działu Produkt →</a>
+        </article>
+
+        <article class="step-card">
+          <div class="step-number">03</div>
+          <h3>Ucz się rozmów z klientkami</h3>
+          <p>
+            Poznaj zasady budowania relacji, zadawania pytań
+            i przedstawiania oferty bez presji.
+          </p>
+          <a href="klientki-i-produkty.html">
+            Przejdź do działu Klientki i produkty →
+          </a>
+        </article>
+
+        <article class="step-card">
+          <div class="step-number">04</div>
+          <h3>Rozwijaj swoje umiejętności</h3>
+          <p>
+            Pracuj nad nawykami, organizacją czasu,
+            pewnością siebie i celami, które są dla Ciebie ważne.
+          </p>
+          <a href="rozwoj.html">Przejdź do działu Rozwój →</a>
+        </article>
+
+        <article class="step-card">
+          <div class="step-number">05</div>
+          <h3>Działaj po swojemu</h3>
+          <p>
+            Poznaj podstawy współpracy, komunikacji
+            i budowania zespołu opartego na relacjach.
+          </p>
+          <a href="biznes.html">Przejdź do działu Biznes →</a>
+        </article>
+
+        <article class="step-card">
+          <div class="step-number">06</div>
+          <h3>Zaplanuj pierwszy tydzień</h3>
+          <p>
+            Wybierz swoje pierwsze zadania, zaplanuj czas
+            i zapisuj postępy. Małe kroki pomagają budować
+            regularność.
+          </p>
+          <a href="moj-plan.html">Przejdź do działu Mój plan →</a>
+        </article>
+
+      </div>
+    </section>
+
+    <section class="section values-section">
+      <div class="section-heading">
+        <p class="eyebrow">Nasze podejście</p>
+        <h2>Na czym budujemy Aloe Balance?</h2>
+        <p>
+          Chcemy rozwijać biznes, w którym jest miejsce
+          na człowieka, relacje i własne wartości.
+        </p>
+      </div>
+
+      <div class="values-grid">
+
+        <article class="value-item">
+          <h3>Autentyczność</h3>
+          <p>
+            Nie musisz udawać kogoś innego.
+            Buduj relacje w zgodzie ze sobą i swoim stylem.
+          </p>
+        </article>
+
+        <article class="value-item">
+          <h3>Wiedza i odpowiedzialność</h3>
+          <p>
+            Poznawaj produkty, korzystaj z rzetelnych informacji
+            i komunikuj ich właściwości odpowiedzialnie.
+          </p>
+        </article>
+
+        <article class="value-item">
+          <h3>Relacje bez presji</h3>
+          <p>
+            Słuchaj, zadawaj pytania i szanuj decyzje innych.
+            Dobra relacja jest ważniejsza niż szybka sprzedaż.
+          </p>
+        </article>
+
+        <article class="value-item">
+          <h3>Rozwój we własnym tempie</h3>
+          <p>
+            Nie musisz być ekspertką od pierwszego dnia.
+            Ucz się, sprawdzaj i stopniowo zdobywaj doświadczenie.
+          </p>
+        </article>
+
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="next-step">
+        <p class="eyebrow">Twój kolejny krok</p>
+        <h2>Zacznij od tego, co najważniejsze</h2>
+
+        <p>
+          Przejdź do działu Produkt, poznaj podstawy oferty
+          i wracaj tutaj, gdy będziesz potrzebowała przypomnieć
+          sobie kolejne etapy swojej drogi.
+        </p>
+
+        <a class="button" href="produkt.html">
+          Poznaj produkty →
+        </a>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+
+    <div class="footer-main">
+
+      <div class="footer-brand">
+        Aloe Balance
+        <span>Flow</span>
+      </div>
+
+      <div class="footer-leader">
+        <strong>Joanna</strong>
+        <p>Liderka Aloe Balance</p>
+        <p class="tagline">Żyj w harmonii ze sobą ✨</p>
+      </div>
+
+      <div class="contact-list">
+        <div>
+          <span class="contact-label">✉</span>
+          <a href="mailto:joanna.aloe@gmail.com">
+            joanna.aloe@gmail.com
+          </a>
+        </div>
+
+        <div>
+          <span class="contact-label">◎</span>
+          <a href="https://www.instagram.com/naturalnie.joanna/"
+             target="_blank" rel="noopener noreferrer">
+            @naturalnie.joanna
+          </a>
+        </div>
+
+        <div>
+          <span class="contact-label">▤</span>
+          <a href="https://substack.com/@kobietawharmonii"
+             target="_blank" rel="noopener noreferrer">
+            Listy Kobiety w Harmonii na Substack
+          </a>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="footer-logo">
+      <img
+        src="logo-aloe-balance.png"
+        alt="Logo Aloe Balance Flow">
+    </div>
+
+    <div class="copyright">
+      © <span id="year">2026</span> Aloe Balance Flow · Stworzone z uważnością
+    </div>
+
+  </footer>
+
+  <script>
+    document.getElementById("year").textContent =
+      new Date().getFullYear();
+  </script>
+
+</body>
+</html>
