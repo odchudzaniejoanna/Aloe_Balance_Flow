@@ -1,0 +1,690 @@
+
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#fff8f4">
+  <title>Rozwój | Aloe Balance Flow</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=Playfair+Display:wght@400;500&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --cream: #fff8f4;
+      --white: #fffdfb;
+      --pink: #bd777b;
+      --pink-light: #f5e5e1;
+      --pink-heading: #ead0ca;
+      --pink-border: #e8c7c0;
+      --gold: #c9a15b;
+      --heading: #29231f;
+      --brown: #55473e;
+      --muted: #806f65;
+      --line: #eadbd4;
+    }
+
+    * { box-sizing: border-box; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      margin: 0;
+      background: var(--cream);
+      color: var(--brown);
+      font-family: "DM Sans", sans-serif;
+      font-size: 15px;
+      line-height: 1.75;
+    }
+
+    a { color: inherit; }
+
+    h1, h2, h3 {
+      font-family: "Playfair Display", Georgia, serif;
+      font-weight: 400;
+      line-height: 1.35;
+    }
+
+    .topbar {
+      display: flex;
+      justify-content: flex-end;
+      padding: 18px 6%;
+      border-bottom: 1px solid var(--line);
+      background: rgba(255,253,251,.94);
+    }
+
+    .back-link {
+      display: inline-block;
+      padding: 10px 18px;
+      border: 1px solid var(--pink-border);
+      border-radius: 28px;
+      background: var(--pink);
+      color: white;
+      text-decoration: none;
+      font-size: 13px;
+      transition: background .2s;
+    }
+
+    .back-link:hover { background: #a96167; }
+
+    .hero {
+      padding: 54px 22px 48px;
+      text-align: center;
+      background:
+        radial-gradient(ellipse at 15% 20%, #f5e4df 0%, transparent 42%),
+        radial-gradient(ellipse at 85% 80%, #eee5d8 0%, transparent 43%),
+        var(--cream);
+      border-bottom: 1px solid var(--line);
+    }
+
+    .eyebrow {
+      margin: 0 0 10px;
+      color: #a95f65;
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+    }
+
+    h1 {
+      margin: 0;
+      color: var(--heading);
+      font-size: clamp(38px, 7vw, 52px);
+      letter-spacing: -.7px;
+    }
+
+    .hero-description {
+      max-width: 650px;
+      margin: 18px auto 0;
+      color: var(--muted);
+      font-size: 15px;
+    }
+
+    .hero-note {
+      display: inline-block;
+      margin-top: 22px;
+      padding: 7px 17px;
+      border: 1px solid var(--pink-border);
+      border-radius: 30px;
+      color: var(--pink);
+      font-size: 12px;
+    }
+
+    main {
+      width: min(920px, 92%);
+      margin: 0 auto;
+      padding: 42px 0 60px;
+    }
+
+    .intro {
+      margin-bottom: 30px;
+      text-align: center;
+    }
+
+    .intro h2 {
+      margin: 0 0 8px;
+      color: var(--heading);
+      font-size: 29px;
+    }
+
+    .intro p {
+      max-width: 690px;
+      margin: 0 auto;
+      color: var(--muted);
+    }
+
+    .section {
+      margin: 26px 0;
+      padding: 24px;
+      border: 1px solid var(--pink-border);
+      border-radius: 19px;
+      background: var(--white);
+      box-shadow: 0 10px 30px rgba(91,61,49,.055);
+    }
+
+    .section-heading {
+      display: flex;
+      align-items: center;
+      gap: 13px;
+      margin-bottom: 20px;
+    }
+
+    .number {
+      display: flex;
+      flex: 0 0 42px;
+      width: 42px;
+      height: 42px;
+      align-items: center;
+      justify-content: center;
+      border: 1px solid var(--gold);
+      border-radius: 50%;
+      background: #fffaf5;
+      color: var(--pink);
+      font-family: "Playfair Display", Georgia, serif;
+      font-size: 16px;
+    }
+
+    .heading-content {
+      flex: 1;
+      min-width: 0;
+      padding: 10px 15px;
+      border: 1px solid #e6c0b9;
+      border-radius: 12px;
+      background: var(--pink-heading);
+    }
+
+    .heading-content h2 {
+      margin: 0;
+      color: var(--heading);
+      font-size: clamp(21px, 4vw, 27px);
+      line-height: 1.35;
+    }
+
+    .heading-content p {
+      margin: 2px 0 0;
+      color: #80675f;
+      font-size: 12px;
+      line-height: 1.55;
+    }
+
+    .section-intro {
+      margin: 0 0 18px;
+      color: var(--muted);
+    }
+
+    .ebook-card {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      padding: 21px;
+      border: 1px solid #ead8d1;
+      border-radius: 14px;
+      background: linear-gradient(145deg, #fffaf7, #fdf2ed);
+    }
+
+    .ebook-icon {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 39px;
+      height: 39px;
+      margin-bottom: 12px;
+      border: 1px solid #e8c7c0;
+      border-radius: 11px;
+      background: #f7e5df;
+      color: #a96368;
+      font-size: 20px;
+    }
+
+    .ebook-card h3 {
+      margin: 0 0 7px;
+      color: #3b302b;
+      font-size: 21px;
+    }
+
+    .ebook-card p {
+      margin: 0 0 14px;
+      color: var(--muted);
+      font-size: 14px;
+      line-height: 1.7;
+    }
+
+    .resource-status {
+      display: inline-block;
+      margin-top: auto;
+      padding: 5px 11px;
+      border: 1px solid #e9d0c8;
+      border-radius: 22px;
+      background: #fffaf7;
+      color: #9a8278;
+      font-size: 11px;
+    }
+
+    .resource-status.video {
+      margin-top: 8px;
+      border-color: #d9c69e;
+      color: #8c7449;
+      background: #fbf5e9;
+    }
+
+    .resource-status .dot {
+      display: inline-block;
+      width: 6px;
+      height: 6px;
+      margin-right: 5px;
+      border-radius: 50%;
+      background: #c7a15d;
+      vertical-align: middle;
+    }
+
+    .resource-status.video .dot { background: #b59a63; }
+
+    .ebook-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 13px;
+    }
+
+    .note {
+      margin-top: 20px;
+      padding: 17px;
+      border-left: 4px solid var(--gold);
+      background: linear-gradient(100deg, #f5e3df, #f8eee5);
+      color: #65544b;
+      font-size: 13px;
+    }
+
+    .closing {
+      padding: 25px 12px 8px;
+      text-align: center;
+    }
+
+    .closing h2 {
+      margin: 0 0 8px;
+      color: var(--heading);
+      font-size: clamp(25px, 5vw, 32px);
+    }
+
+    .closing p {
+      max-width: 620px;
+      margin: 0 auto;
+      color: var(--muted);
+    }
+
+    .plan-link {
+      display: inline-block;
+      margin-top: 19px;
+      padding: 11px 19px;
+      border: 1px solid var(--pink);
+      border-radius: 26px;
+      color: #9e565d;
+      text-decoration: none;
+      font-size: 13px;
+      transition: all .2s;
+    }
+
+    .plan-link:hover {
+      background: var(--pink);
+      color: white;
+    }
+
+    /* Stopka w układzie trzech kolumn, zgodnym z index.html */
+    .site-footer {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1.3fr;
+      align-items: center;
+      gap: 22px;
+      padding: 40px 6%;
+      border-top: 1px solid var(--line);
+      background: #f7eee9;
+    }
+
+    .footer-brand {
+      color: #494837;
+      font-family: "Playfair Display", Georgia, serif;
+      font-size: 27px;
+      line-height: 1.2;
+    }
+
+    .footer-brand span {
+      display: block;
+      margin-left: 35px;
+      color: var(--pink);
+      font-style: italic;
+    }
+
+    .footer-leader {
+      padding: 5px 15px;
+      border-left: 1px solid var(--line);
+      border-right: 1px solid var(--line);
+      text-align: center;
+    }
+
+    .footer-leader strong {
+      color: var(--pink);
+      font-family: "Playfair Display", Georgia, serif;
+      font-size: 29px;
+      font-style: italic;
+      font-weight: 400;
+    }
+
+    .footer-leader p {
+      margin: 3px 0;
+      font-size: 12px;
+    }
+
+    .footer-leader .tagline {
+      margin-top: 10px;
+      color: #a65f65;
+    }
+
+    .contact-list {
+      display: grid;
+      gap: 8px;
+    }
+
+    .contact-list a {
+      color: var(--brown);
+      font-size: 12px;
+      text-decoration: none;
+      overflow-wrap: anywhere;
+    }
+
+    .contact-list a:hover { color: var(--pink); }
+
+    .contact-label {
+      display: inline-block;
+      width: 22px;
+      color: var(--pink);
+    }
+
+    .footer-logo-area {
+      padding: 20px 0;
+      background: #f8f0e7;
+      text-align: center;
+    }
+
+    .footer-logo-area img {
+      display: block;
+      width: min(200px, 48%);
+      height: auto;
+      margin: 0 auto;
+    }
+
+    .copyright {
+      margin: 0;
+      padding: 14px 10px;
+      border-top: 1px solid var(--line);
+      background: #f1e5df;
+      color: var(--muted);
+      text-align: center;
+      font-size: 11px;
+    }
+
+    @media (max-width: 650px) {
+      .hero { padding: 43px 19px; }
+
+      main { padding-top: 28px; }
+
+      .section { padding: 18px 15px; }
+
+      .ebook-grid { grid-template-columns: 1fr; }
+
+      .section-heading { gap: 10px; }
+
+      .number {
+        flex-basis: 36px;
+        width: 36px;
+        height: 36px;
+        font-size: 14px;
+      }
+
+      .heading-content { padding: 9px 11px; }
+
+      .heading-content h2 { font-size: 21px; }
+
+      .site-footer {
+        grid-template-columns: 1fr;
+        gap: 22px;
+        text-align: center;
+      }
+
+      .footer-brand span { margin-left: 0; }
+
+      .footer-leader {
+        padding: 18px 0;
+        border-top: 1px solid var(--line);
+        border-right: 0;
+        border-bottom: 1px solid var(--line);
+        border-left: 0;
+      }
+
+      .contact-list { justify-items: center; }
+    }
+  </style>
+</head>
+
+<body>
+  <header class="topbar">
+    <a class="back-link" href="index.html">← Wróć do strony głównej</a>
+  </header>
+
+  <section class="hero">
+    <p class="eyebrow">Aloe Balance Flow</p>
+    <h1>Rozwój</h1>
+    <p class="hero-description">
+      Buduj pewność siebie, rozwijaj wspierające nawyki i ucz się działać
+      w zgodzie ze sobą. Małe kroki też prowadzą do wielkich zmian.
+    </p>
+    <span class="hero-note">Twoja mentalność · Twoje nawyki · Twój rozwój</span>
+  </section>
+
+  <main>
+    <div class="intro">
+      <h2>Twoja biblioteka rozwoju</h2>
+      <p>
+        Znajdziesz tu e-booki, ćwiczenia i inspiracje, które pomogą Ci
+        rozwijać się jako kobieta i Przedsiębiorczyni. Korzystaj z nich
+        we własnym tempie.
+      </p>
+    </div>
+
+    <!-- 01 -->
+    <section class="section" id="mentalnosc">
+      <div class="section-heading">
+        <div class="number">01</div>
+        <div class="heading-content">
+          <h2>Mentalność Kobiety Przedsiębiorczej</h2>
+          <p>Buduj własną drogę bez presji porównywania się z innymi.</p>
+        </div>
+      </div>
+
+      <div class="ebook-card">
+        <div class="ebook-icon" aria-hidden="true">✧</div>
+        <h3>E-book: Mentalność Kobiety Przedsiębiorczej</h3>
+        <p>
+          Materiał o podejściu do rozwoju, samodzielności, odpowiedzialności
+          i budowaniu działalności dopasowanej do własnego życia.
+        </p>
+        <span class="resource-status"><span class="dot"></span>E-book PDF · w przygotowaniu</span>
+      </div>
+    </section>
+
+    <!-- 02 -->
+    <section class="section" id="pewnosc-siebie">
+      <div class="section-heading">
+        <div class="number">02</div>
+        <div class="heading-content">
+          <h2>Przekonania i pewność siebie</h2>
+          <p>Rozpoznawaj obawy i wzmacniaj zaufanie do siebie.</p>
+        </div>
+      </div>
+
+      <div class="ebook-card">
+        <div class="ebook-icon" aria-hidden="true">♡</div>
+        <h3>E-book: Pewność siebie i wspierające przekonania</h3>
+        <p>
+          Przyjrzyj się myślom, które Cię zatrzymują, i naucz się zastępować
+          je bardziej wspierającym podejściem do siebie oraz swoich działań.
+        </p>
+        <span class="resource-status"><span class="dot"></span>E-book PDF · w przygotowaniu</span>
+      </div>
+    </section>
+
+    <!-- 03 -->
+    <section class="section" id="okienka-czasu">
+      <div class="section-heading">
+        <div class="number">03</div>
+        <div class="heading-content">
+          <h2>Strategia Okienek Czasu</h2>
+          <p>Rozwijaj biznes w rytmie swojego życia.</p>
+        </div>
+      </div>
+
+      <div class="ebook-card">
+        <div class="ebook-icon" aria-hidden="true">◷</div>
+        <h3>E-book: Strategia Okienek Czasu</h3>
+        <p>
+          Naucz się wykorzystywać krótkie bloki czasu, planować realne
+          działania i łączyć rozwój działalności z codziennymi obowiązkami.
+        </p>
+        <span class="resource-status"><span class="dot"></span>E-book PDF · w przygotowaniu</span>
+      </div>
+    </section>
+
+    <!-- 04 -->
+    <section class="section" id="autentycznosc">
+      <div class="section-heading">
+        <div class="number">04</div>
+        <div class="heading-content">
+          <h2>Autentyczność w sieci</h2>
+          <p>Pokazuj siebie i komunikuj się w zgodzie ze sobą.</p>
+        </div>
+      </div>
+
+      <div class="ebook-card">
+        <div class="ebook-icon" aria-hidden="true">✿</div>
+        <h3>E-book: Autentyczność w sieci</h3>
+        <p>
+          Odkryj, jak budować zaufanie, dzielić się swoją perspektywą
+          i rozwijać obecność w internecie bez kopiowania innych.
+        </p>
+        <span class="resource-status"><span class="dot"></span>E-book PDF · w przygotowaniu</span>
+      </div>
+    </section>
+
+    <!-- 05 -->
+    <section class="section" id="nawyki">
+      <div class="section-heading">
+        <div class="number">05</div>
+        <div class="heading-content">
+          <h2>Nawyki i konsekwencja</h2>
+          <p>Małe, regularne działania zamiast czekania na motywację.</p>
+        </div>
+      </div>
+
+      <div class="ebook-card">
+        <div class="ebook-icon" aria-hidden="true">↗</div>
+        <h3>E-book: Nawyki i konsekwencja</h3>
+        <p>
+          Poznaj sposoby na budowanie wspierających nawyków, wracanie do
+          działania po przerwie i utrzymywanie regularności bez perfekcjonizmu.
+        </p>
+        <span class="resource-status"><span class="dot"></span>E-book PDF · w przygotowaniu</span>
+        <span class="resource-status video"><span class="dot"></span>Film YouTube · planowany</span>
+      </div>
+    </section>
+
+    <!-- 06 -->
+    <section class="section" id="planer">
+      <div class="section-heading">
+        <div class="number">06</div>
+        <div class="heading-content">
+          <h2>Planer Aloe Balance</h2>
+          <p>Przełóż swoje intencje na konkretny plan działania.</p>
+        </div>
+      </div>
+
+      <div class="ebook-card">
+        <div class="ebook-icon" aria-hidden="true">□</div>
+        <h3>E-book: Planowanie i organizacja</h3>
+        <p>
+          Uporządkuj swoje priorytety, zaplanuj tydzień i stwórz własny
+          rytm pracy. To miejsce na planowanie działań oraz śledzenie postępów.
+        </p>
+        <span class="resource-status"><span class="dot"></span>E-book PDF · w przygotowaniu</span>
+      </div>
+    </section>
+
+    <!-- 07 -->
+    <section class="section" id="realizacja-celow">
+      <div class="section-heading">
+        <div class="number">07</div>
+        <div class="heading-content">
+          <h2>Jak realizować cele?</h2>
+          <p>Od pomysłu do małych kroków, które możesz wykonać.</p>
+        </div>
+      </div>
+
+      <div class="ebook-card">
+        <div class="ebook-icon" aria-hidden="true">◎</div>
+        <h3>E-book: Realizacja celów krok po kroku</h3>
+        <p>
+          Naucz się określać priorytety, dzielić większe cele na mniejsze
+          zadania i regularnie sprawdzać, co przybliża Cię do efektu.
+        </p>
+        <span class="resource-status"><span class="dot"></span>E-book PDF · w przygotowaniu</span>
+        <span class="resource-status video"><span class="dot"></span>Film YouTube · planowany</span>
+      </div>
+    </section>
+
+    <div class="note">
+      <strong>Ważne:</strong> nie musisz pracować nad wszystkim jednocześnie.
+      Wybierz temat, który jest Ci teraz najbardziej potrzebny, i wróć do
+      pozostałych materiałów wtedy, gdy będziesz gotowa.
+    </div>
+
+    <section class="closing">
+      <h2>Rozwijaj się we własnym tempie.</h2>
+      <p>
+        Nie chodzi o to, by robić wszystko idealnie. Chodzi o to, by poznawać
+        siebie, podejmować świadome decyzje i konsekwentnie wykonywać kolejne kroki.
+      </p>
+      <a class="plan-link" href="moj-plan.html">Przejdź do Mojego planu →</a>
+    </section>
+  </main>
+
+  <footer>
+    <div class="site-footer">
+      <div class="footer-brand">
+        Aloe Balance <span>Flow</span>
+      </div>
+
+      <div class="footer-leader">
+        <strong>Joanna</strong>
+        <p>Liderka Aloe Balance</p>
+        <p class="tagline">Żyj w harmonii ze sobą</p>
+      </div>
+
+      <div class="contact-list">
+        <div>
+          <span class="contact-label">✉</span>
+          <a href="mailto:joanna.aloe@gmail.com">joanna.aloe@gmail.com</a>
+        </div>
+        <div>
+          <span class="contact-label">◎</span>
+          <a href="https://www.instagram.com/naturalnie.joanna/" target="_blank" rel="noopener noreferrer">
+            IG: @naturalnie.joanna
+          </a>
+        </div>
+        <div>
+          <span class="contact-label">▤</span>
+          <a href="https://substack.com/@kobietawharmonii" target="_blank" rel="noopener noreferrer">
+            Listy Kobiety w Harmonii na Substack
+          </a>
+        </div>
+        <div>
+          <span class="contact-label">☏</span>
+          <a href="https://chat.whatsapp.com/FHHUXIi4fAL4bCsnCno7LB?s=cl&amp;p=a&amp;mlu=4&amp;ilr=4" target="_blank" rel="noopener noreferrer">
+            Grupa Partnerek Aloe Balance na WhatsApp
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-logo-area">
+      <img src="file_00000000d9788210b059a6a6f59ae0eb.png" alt="Logo Aloe Balance Flow">
+    </div>
+
+    <p class="copyright">
+      © <span id="year">2026</span> Aloe Balance Flow · Stworzone z uważnością
+    </p>
+  </footer>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
