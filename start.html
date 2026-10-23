@@ -1,4 +1,4 @@
-
+g
 <!DOCTYPE html>
 <html lang="pl">
 <head>
@@ -402,6 +402,189 @@
         height: 42px;
       }
     }
+
+
+
+/* === NOWY, WYRAŹNIEJSZY STYL ALOE BALANCE FLOW === */
+
+:root {
+  --heading: #29231f;
+  --pink: #bd777b;
+  --pink-light: #f5e5e1;
+  --gold: #c9a15b;
+}
+
+/* Nagłówki */
+h1,
+h2,
+h3,
+.section h2,
+.closing h2 {
+  color: var(--heading);
+}
+
+h1 {
+  font-size: clamp(38px, 7vw, 52px);
+  font-weight: 500;
+  letter-spacing: -0.7px;
+}
+
+.section h2 {
+  font-size: clamp(25px, 4vw, 30px);
+  line-height: 1.35;
+  font-weight: 500;
+}
+
+.section h3,
+.value-card h3 {
+  color: #3b302b;
+  font-size: 20px;
+  font-weight: 500;
+}
+
+.hero .eyebrow {
+  color: #a95f65;
+  font-weight: 600;
+}
+
+/* Karty — bardziej wyraziste, ale nadal eleganckie */
+.section {
+  border: 1px solid #e3bdb7;
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(91, 61, 49, 0.075);
+  transition: box-shadow 0.2s ease, border-color 0.2s ease;
+}
+
+.section:hover {
+  border-color: #c88b87;
+  box-shadow: 0 13px 32px rgba(91, 61, 49, 0.11);
+}
+
+.value-card {
+  border-color: #ead4cd;
+  background: linear-gradient(145deg, #fffaf7, #fdf2ed);
+}
+
+.value-card h3 {
+  color: #a65f65;
+  margin-bottom: 8px;
+}
+
+/* Ilustracje przy nagłówkach */
+.section-heading {
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 22px;
+}
+
+.section-icon {
+  display: flex;
+  flex: 0 0 62px;
+  width: 62px;
+  height: 62px;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid #dfb5a8;
+  border-radius: 18px;
+  background:
+    radial-gradient(circle at 25% 20%, #fffdfb 0%, transparent 60%),
+    linear-gradient(145deg, #f6e4df, #f1e5d5);
+  color: #a96368;
+  font-size: 29px;
+  box-shadow: 0 4px 12px rgba(125, 79, 69, 0.07);
+}
+
+.section-icon svg {
+  width: 31px;
+  height: 31px;
+  stroke: currentColor;
+  stroke-width: 1.5;
+  fill: none;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.section-heading .muted {
+  margin-top: 5px;
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+/* Treść i materiały */
+body {
+  color: #40352f;
+}
+
+.section p,
+.steps li {
+  color: #51453e;
+}
+
+.material {
+  border: 1px solid #f0dcd5;
+  background: #fbefea;
+}
+
+.material-label {
+  color: #a65f65;
+}
+
+.resource-link {
+  border-color: #bd777b;
+  color: #9e565d;
+  font-weight: 500;
+}
+
+.resource-link.disabled {
+  color: #95847b;
+  background: #fffaf7;
+}
+
+.quote {
+  border-left-width: 4px;
+  border-left-color: #c9a15b;
+  background: linear-gradient(100deg, #f5e3df, #f8eee5);
+}
+
+/* Przyciski i zamknięcie strony */
+.back-link,
+.resource-link {
+  transition: all 0.2s ease;
+}
+
+.closing h2 {
+  font-size: clamp(27px, 5vw, 34px);
+}
+
+@media (max-width: 600px) {
+  .section-icon {
+    flex-basis: 52px;
+    width: 52px;
+    height: 52px;
+    border-radius: 15px;
+    font-size: 25px;
+  }
+
+  .section-icon svg {
+    width: 27px;
+    height: 27px;
+  }
+
+  .section-heading {
+    gap: 13px;
+  }
+
+  .section h2 {
+    font-size: 24px;
+  }
+}
+    
+
+
+
+
+
+    
   </style>
 </head>
 
