@@ -1,0 +1,603 @@
+    <!DOCTYPE html>
+    <html lang="pl">
+    <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="description" content="Aloe Balance Flow — przestrzeń rozwoju, zdrowia, relacji i kobiecego biznesu.">
+      <title>Aloe Balance Flow | Rozwój • Zdrowie • Wolność</title>
+      <style>
+        :root {
+          --linen: #F7F2ED;
+          --cream: #FFF9F3;
+          --blush: #E6D0CD;
+          --dusty-rose: #BD8584;
+          --rose-deep: #A96869;
+          --ink: #3D352D;
+          --muted: #74665D;
+          --gold: #C6A15B;
+          --gold-soft: #DCC79A;
+          --line: #E8D5D0;
+          --white: #FFFFFF;
+        }
+
+        * { box-sizing: border-box; }
+
+        html { scroll-behavior: smooth; }
+
+        body {
+          margin: 0;
+          background: var(--linen);
+          color: var(--ink);
+          font-family: Georgia, "Times New Roman", serif;
+          font-weight: 400;
+          line-height: 1.65;
+        }
+
+        a { color: inherit; }
+
+        .site-header {
+          position: relative;
+          z-index: 2;
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          gap: 22px;
+          padding: 14px clamp(18px, 4vw, 58px);
+          background: rgba(255, 249, 243, 0.97);
+          border-bottom: 1px solid var(--line);
+        }
+
+        .brand-small {
+          color: var(--rose-deep);
+          text-decoration: none;
+          font-size: 1.15rem;
+          letter-spacing: .04em;
+          white-space: nowrap;
+        }
+
+        .main-nav {
+          display: flex;
+          flex-wrap: wrap;
+          justify-content: center;
+          gap: 8px 24px;
+        }
+
+        .main-nav a {
+          text-decoration: none;
+          font-size: .96rem;
+          color: var(--ink);
+          border-bottom: 1px solid transparent;
+          padding: 3px 0;
+        }
+
+        .main-nav a:hover,
+        .main-nav a:focus-visible {
+          color: var(--rose-deep);
+          border-bottom-color: var(--dusty-rose);
+        }
+
+        .contact-pill,
+        .button {
+          display: inline-flex;
+          justify-content: center;
+          align-items: center;
+          gap: 9px;
+          border: 0;
+          border-radius: 999px;
+          padding: 11px 22px;
+          background: var(--dusty-rose);
+          color: var(--white);
+          text-decoration: none;
+          font-family: Arial, Helvetica, sans-serif;
+          font-size: .82rem;
+          letter-spacing: .04em;
+          transition: background .2s ease, transform .2s ease;
+        }
+
+        .contact-pill:hover,
+        .button:hover {
+          background: var(--rose-deep);
+          transform: translateY(-1px);
+        }
+
+        .hero {
+          display: grid;
+          grid-template-columns: 1.03fr .97fr;
+          min-height: 480px;
+          background:
+            radial-gradient(ellipse at 12% 12%, rgba(230,208,205,.56), transparent 42%),
+            linear-gradient(110deg, var(--cream), #F3E4DE);
+          overflow: hidden;
+        }
+
+        .hero-copy {
+          align-self: center;
+          padding: 62px clamp(24px, 7vw, 100px);
+          position: relative;
+        }
+
+        .ornament {
+          color: var(--gold);
+          font-size: 2.2rem;
+          letter-spacing: .18em;
+          line-height: 1;
+          margin-bottom: 14px;
+        }
+
+        h1 {
+          margin: 0;
+          font-size: clamp(3.1rem, 6vw, 6rem);
+          line-height: .96;
+          letter-spacing: -.055em;
+          font-weight: 400;
+          color: #343522;
+        }
+
+        h1 span {
+          display: block;
+          margin-left: 18%;
+          color: var(--dusty-rose);
+          font-style: italic;
+          font-weight: 400;
+        }
+
+        .eyebrow {
+          margin: 23px 0 12px;
+          font-family: Arial, Helvetica, sans-serif;
+          font-size: .78rem;
+          letter-spacing: .2em;
+          text-transform: uppercase;
+          color: var(--muted);
+        }
+
+        .hero-copy p {
+          max-width: 460px;
+          font-size: 1.15rem;
+          margin: 0 0 25px;
+        }
+
+        .hero-image {
+          min-height: 430px;
+          position: relative;
+          background:
+            linear-gradient(90deg, rgba(255,249,243,.08), rgba(255,249,243,0)),
+            url("https://images.unsplash.com/photo-1490750967868-88aa4486c946?auto=format&fit=crop&w=1400&q=85") center 42% / cover no-repeat;
+        }
+
+        .hero-image::after {
+          content: "";
+          position: absolute;
+          inset: 0;
+          background: linear-gradient(90deg, rgba(247,242,237,.28), transparent 38%), linear-gradient(0deg, rgba(61,53,45,.14), transparent 40%);
+          pointer-events: none;
+        }
+
+        .hero-signature {
+          position: absolute;
+          right: clamp(18px, 4vw, 55px);
+          bottom: 25px;
+          z-index: 1;
+          padding: 13px 19px;
+          text-align: right;
+          background: rgba(255, 249, 243, .84);
+          border: 1px solid rgba(198,161,91,.72);
+          border-radius: 2px;
+        }
+
+        .hero-signature strong {
+          display: block;
+          color: var(--rose-deep);
+          font-size: 1.8rem;
+          font-style: italic;
+          font-weight: 400;
+          line-height: 1.15;
+        }
+
+        .hero-signature span {
+          font-family: Arial, Helvetica, sans-serif;
+          font-size: .77rem;
+        }
+
+        .areas {
+          padding: 48px clamp(18px, 4vw, 58px) 54px;
+          background: var(--cream);
+        }
+
+        .section-heading {
+          text-align: center;
+          margin: 0 auto 28px;
+        }
+
+        .section-heading h2 {
+          margin: 0;
+          color: #46442F;
+          font-size: clamp(1.65rem, 3vw, 2.5rem);
+          font-weight: 400;
+          line-height: 1.2;
+          letter-spacing: .015em;
+        }
+
+        .section-heading p {
+          margin: 8px 0 0;
+          color: var(--muted);
+          font-family: Arial, Helvetica, sans-serif;
+          font-size: .76rem;
+          letter-spacing: .2em;
+          text-transform: uppercase;
+        }
+
+        .tile-grid {
+          display: grid;
+          grid-template-columns: repeat(3, minmax(0, 1fr));
+          gap: 18px;
+          max-width: 1320px;
+          margin: 0 auto;
+        }
+
+        .tile {
+          display: flex;
+          flex-direction: column;
+          overflow: hidden;
+          text-decoration: none;
+          background: #FFF9F4;
+          border: 1px solid #DFC0B9;
+          border-radius: 11px;
+          box-shadow: 0 3px 12px rgba(92, 62, 52, .035);
+          transition: transform .2s ease, box-shadow .2s ease, border-color .2s ease;
+        }
+
+        .tile:hover,
+        .tile:focus-visible {
+          transform: translateY(-4px);
+          border-color: var(--dusty-rose);
+          box-shadow: 0 10px 24px rgba(92, 62, 52, .10);
+          outline: none;
+        }
+
+        .tile-art {
+          height: 145px;
+          display: grid;
+          place-items: center;
+          position: relative;
+          overflow: hidden;
+          background: linear-gradient(135deg, #EAD4CF, #F7EAE3 55%, #E5D9C9);
+        }
+
+        .tile-art::before,
+        .tile-art::after {
+          content: "";
+          position: absolute;
+          width: 180px;
+          height: 180px;
+          border: 1px solid rgba(198,161,91,.58);
+          border-radius: 50%;
+          transform: rotate(-25deg) scaleX(.65);
+        }
+
+        .tile-art::after {
+          width: 130px;
+          height: 130px;
+          transform: rotate(35deg) scaleX(.55);
+          border-color: rgba(169,104,105,.32);
+        }
+
+        .tile-icon {
+          position: relative;
+          z-index: 1;
+          display: grid;
+          place-items: center;
+          width: 76px;
+          height: 76px;
+          border-radius: 50%;
+          border: 1px solid var(--gold);
+          background: rgba(255,249,243,.94);
+          color: var(--rose-deep);
+          font-size: 2rem;
+        }
+
+        .tile-body {
+          display: flex;
+          flex: 1;
+          flex-direction: column;
+          align-items: center;
+          text-align: center;
+          padding: 18px 18px 21px;
+        }
+
+        .tile-number {
+          margin-bottom: 2px;
+          color: var(--rose-deep);
+          font-family: Arial, Helvetica, sans-serif;
+          font-size: .7rem;
+          letter-spacing: .15em;
+        }
+
+        .tile h3 {
+          margin: 0 0 7px;
+          font-size: 1.22rem;
+          line-height: 1.25;
+          font-weight: 400;
+          color: #40392F;
+        }
+
+        .tile p {
+          margin: 0;
+          max-width: 290px;
+          color: var(--muted);
+          font-size: .96rem;
+        }
+
+        .tile-link {
+          margin-top: 14px;
+          color: var(--rose-deep);
+          font-family: Arial, Helvetica, sans-serif;
+          font-size: .78rem;
+          letter-spacing: .06em;
+        }
+
+        .manifesto {
+          position: relative;
+          display: grid;
+          grid-template-columns: 1fr 1fr;
+          gap: 34px;
+          align-items: center;
+          padding: 42px clamp(24px, 9vw, 130px);
+          background: linear-gradient(100deg, #F0DCD8, #F8E9E4 54%, #F1DEDA);
+          border-top: 1px solid #EAD2CC;
+          border-bottom: 1px solid #EAD2CC;
+        }
+
+        .manifesto blockquote {
+          margin: 0;
+          padding-left: 24px;
+          border-left: 2px solid var(--gold);
+          color: #55453C;
+          font-size: clamp(1.25rem, 2.3vw, 1.8rem);
+          font-style: italic;
+          line-height: 1.45;
+        }
+
+        .manifesto p {
+          margin: 0;
+          font-size: 1rem;
+          color: #5F5047;
+        }
+
+        .site-footer {
+          display: grid;
+          grid-template-columns: 1fr 1fr 1.2fr;
+          gap: 32px;
+          align-items: center;
+          padding: 42px clamp(22px, 5vw, 70px);
+          background: var(--linen);
+        }
+
+        .footer-brand {
+          color: #41432D;
+          font-size: 2rem;
+          line-height: 1.1;
+        }
+
+        .footer-brand span {
+          display: block;
+          margin-left: 45px;
+          color: var(--dusty-rose);
+          font-size: 1.8rem;
+          font-style: italic;
+        }
+
+        .footer-leader {
+          text-align: center;
+          padding: 12px 22px;
+          border-left: 1px solid var(--line);
+          border-right: 1px solid var(--line);
+        }
+
+        .footer-leader strong {
+          display: block;
+          color: var(--rose-deep);
+          font-size: 2rem;
+          font-style: italic;
+          font-weight: 400;
+        }
+
+        .footer-leader p {
+          margin: 0;
+          font-size: .88rem;
+        }
+
+        .contact-list {
+          display: grid;
+          gap: 9px;
+          font-family: Arial, Helvetica, sans-serif;
+          font-size: .9rem;
+        }
+
+        .contact-list a {
+          text-decoration: none;
+          overflow-wrap: anywhere;
+        }
+
+        .contact-list a:hover { color: var(--rose-deep); }
+
+        .contact-label {
+          display: inline-block;
+          min-width: 28px;
+          color: var(--rose-deep);
+        }
+
+        .copyright {
+          padding: 14px 20px;
+          text-align: center;
+          background: #F0E5DE;
+          color: #77685F;
+          font-family: Arial, Helvetica, sans-serif;
+          font-size: .76rem;
+        }
+
+        @media (max-width: 900px) {
+          .site-header { flex-wrap: wrap; justify-content: center; }
+          .main-nav { order: 3; width: 100%; gap: 8px 17px; }
+          .hero { grid-template-columns: 1fr 1fr; }
+          .hero-copy { padding: 42px 28px; }
+          .tile-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+          .site-footer { grid-template-columns: 1fr 1fr; }
+          .contact-list { grid-column: 1 / -1; justify-self: center; }
+        }
+
+        @media (max-width: 600px) {
+          .site-header { padding: 13px 16px; gap: 12px; }
+          .brand-small { font-size: 1rem; }
+          .contact-pill { padding: 9px 14px; font-size: .74rem; }
+          .main-nav { gap: 7px 15px; }
+          .main-nav a { font-size: .88rem; }
+          .hero { grid-template-columns: 1fr; }
+          .hero-copy { padding: 43px 25px 34px; }
+          h1 { font-size: clamp(3.3rem, 16vw, 5rem); }
+          .hero-copy p { font-size: 1.05rem; }
+          .hero-image { min-height: 350px; }
+          .hero-signature { right: 15px; bottom: 15px; }
+          .areas { padding: 38px 16px 42px; }
+          .tile-grid { grid-template-columns: 1fr; gap: 14px; }
+          .tile-art { height: 130px; }
+          .tile-body { padding: 16px; }
+          .manifesto { grid-template-columns: 1fr; gap: 20px; padding: 34px 25px; }
+          .manifesto blockquote { padding-left: 17px; }
+          .site-footer { grid-template-columns: 1fr; gap: 24px; text-align: center; }
+          .footer-leader { border: 0; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+          .contact-list { grid-column: auto; justify-self: stretch; text-align: left; }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+          html { scroll-behavior: auto; }
+          *, *::before, *::after { transition: none !important; }
+        }
+      </style>
+    </head>
+    <body>
+      <header class="site-header">
+        <a class="brand-small" href="index.html" aria-label="Aloe Balance Flow — strona główna">Aloe Balance Flow</a>
+        <nav class="main-nav" aria-label="Nawigacja główna">
+          <a href="index.html">Strona główna</a>
+          <a href="start.html">Start</a>
+          <a href="produkt.html">Produkt</a>
+          <a href="rozwoj.html">Rozwój</a>
+          <a href="klientki-i-produkty.html">Klientki i produkty</a>
+          <a href="biznes.html">Biznes</a>
+          <a href="moj-plan.html">Mój plan</a>
+        </nav>
+        <a class="contact-pill" href="mailto:WPISZ-TUTAJ-SWOJ-EMAIL">Skontaktuj się ze mną <span aria-hidden="true">✉</span></a>
+      </header>
+
+      <main>
+        <section class="hero" aria-labelledby="page-title">
+          <div class="hero-copy">
+            <div class="ornament" aria-hidden="true">⌁ ♡ ⌁</div>
+            <h1 id="page-title">Aloe Balance <span>Flow</span></h1>
+            <div class="eyebrow">Rozwój · Zdrowie · Wolność</div>
+            <p>Twoje miejsce, w którym krok po kroku budujesz wiedzę, pewność siebie i swój własny sposób działania w Aloe Balance.</p>
+            <a class="button" href="#obszary">Zacznij tutaj <span aria-hidden="true">→</span></a>
+          </div>
+          <div class="hero-image" role="img" aria-label="Jasna, naturalna fotografia w kobiecej estetyce">
+            <div class="hero-signature">
+              <strong>Joanna</strong>
+              <span>Liderka Aloe Balance</span>
+            </div>
+          </div>
+        </section>
+
+        <section class="areas" id="obszary" aria-labelledby="areas-title">
+          <div class="section-heading">
+            <h2 id="areas-title">6 obszarów Twojego rozwoju</h2>
+            <p>Wybierz swój pierwszy krok</p>
+          </div>
+
+          <div class="tile-grid">
+            <a class="tile" href="start.html">
+              <div class="tile-art"><span class="tile-icon" aria-hidden="true">❧</span></div>
+              <div class="tile-body">
+                <span class="tile-number">DZIAŁ 01</span>
+                <h3>Start</h3>
+                <p>Poznaj Aloe Balance Flow, nasze wartości i pierwsze kroki.</p>
+                <span class="tile-link">Przejdź do działu →</span>
+              </div>
+            </a>
+
+            <a class="tile" href="produkt.html">
+              <div class="tile-art"><span class="tile-icon" aria-hidden="true">✿</span></div>
+              <div class="tile-body">
+                <span class="tile-number">DZIAŁ 02</span>
+                <h3>Produkt</h3>
+                <p>Odkrywaj ofertę Forever i rozwijaj wiedzę o produktach.</p>
+                <span class="tile-link">Przejdź do działu →</span>
+              </div>
+            </a>
+
+            <a class="tile" href="rozwoj.html">
+              <div class="tile-art"><span class="tile-icon" aria-hidden="true">♧</span></div>
+              <div class="tile-body">
+                <span class="tile-number">DZIAŁ 03</span>
+                <h3>Rozwój</h3>
+                <p>Buduj wspierające nawyki, rozwijaj umiejętności i realizuj cele.</p>
+                <span class="tile-link">Przejdź do działu →</span>
+              </div>
+            </a>
+
+            <a class="tile" href="klientki-i-produkty.html">
+              <div class="tile-art"><span class="tile-icon" aria-hidden="true">♡</span></div>
+              <div class="tile-body">
+                <span class="tile-number">DZIAŁ 04</span>
+                <h3>Klientki i produkty</h3>
+                <p>Ucz się rozpoznawać potrzeby klientek, rozmawiać bez presji i budować relacje.</p>
+                <span class="tile-link">Przejdź do działu →</span>
+              </div>
+            </a>
+
+            <a class="tile" href="biznes.html">
+              <div class="tile-art"><span class="tile-icon" aria-hidden="true">♙</span></div>
+              <div class="tile-body">
+                <span class="tile-number">DZIAŁ 05</span>
+                <h3>Biznes i rozwój zespołu</h3>
+                <p>Rozwijaj współpracę, wdrażaj Partnerki i buduj zespół na własnych zasadach.</p>
+                <span class="tile-link">Przejdź do działu →</span>
+              </div>
+            </a>
+
+            <a class="tile" href="moj-plan.html">
+              <div class="tile-art"><span class="tile-icon" aria-hidden="true">☷</span></div>
+              <div class="tile-body">
+                <span class="tile-number">DZIAŁ 06</span>
+                <h3>Mój plan i postępy</h3>
+                <p>Planuj tydzień, korzystaj z checklist i śledź swoje małe kroki.</p>
+                <span class="tile-link">Przejdź do działu →</span>
+              </div>
+            </a>
+          </div>
+        </section>
+
+        <section class="manifesto" aria-label="Misja Aloe Balance Flow">
+          <blockquote>Wierzę, że można rozwijać się spokojnie, działać po swojemu i budować życie, które jest w zgodzie z własnymi wartościami.</blockquote>
+          <p>Aloe Balance Flow to przestrzeń do nauki, organizacji i rozwoju, z miejscem na relacje, zdrowie, kobiecą przedsiębiorczość i codzienny balans.</p>
+        </section>
+      </main>
+
+      <footer>
+        <div class="site-footer">
+          <div class="footer-brand">Aloe Balance <span>Flow</span></div>
+          <div class="footer-leader">
+            <strong>Joanna</strong>
+            <p>Liderka Aloe Balance</p>
+            <p style="margin-top:12px;color:var(--rose-deep);">Żyj w harmonii ze sobą</p>
+          </div>
+          <div class="contact-list">
+            <div><span class="contact-label">✉</span> <a href="mailto:WPISZ-TUTAJ-SWOJ-EMAIL">joanna.aloe@gmail.com</a></div>
+            <div><span class="contact-label">◎</span> <a href="https://www.instagram.com/naturalnie.joanna/" target="_blank" rel="noopener noreferrer">@naturalnie.joanna</a></div>
+            <div><span class="contact-label">▤</span> <a href="https://substack.com/@kobietawharmonii" target="_blank" rel="noopener noreferrer">Listy Kobiety w Harmonii na Substack</a></div>
+          </div>
+        </div>
+        <div class="copyright">© <span id="year">2026</span> Aloe Balance Flow · Stworzone z uważnością</div>
+      </footer>
+    </body>
+    </html>
+
+      
