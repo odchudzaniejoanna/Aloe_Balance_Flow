@@ -1,0 +1,694 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#fff8f4">
+  <title>Produkt | Aloe Balance Flow</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=Playfair+Display:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --cream: #fff8f4;
+      --white: #fffdfb;
+      --pink: #bd777b;
+      --pink-dark: #a65f65;
+      --pink-heading: #ead0ca;
+      --pink-light: #f5e5e1;
+      --pink-border: #e8c6bf;
+      --gold: #c9a15b;
+      --heading: #29231f;
+      --brown: #51453e;
+      --muted: #806f65;
+      --line: #eadbd4;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      background: var(--cream);
+      color: var(--brown);
+      font-family: "DM Sans", sans-serif;
+      font-size: 16px;
+      line-height: 1.75;
+    }
+
+    a {
+      color: inherit;
+    }
+
+    .topbar {
+      display: flex;
+      justify-content: flex-end;
+      padding: 18px 6%;
+      border-bottom: 1px solid var(--line);
+      background: rgba(255,253,251,.96);
+    }
+
+    .back-link {
+      display: inline-block;
+      padding: 10px 18px;
+      border: 1px solid var(--pink-border);
+      border-radius: 28px;
+      background: var(--pink);
+      color: white;
+      text-decoration: none;
+      font-size: 13px;
+      transition: background .2s;
+    }
+
+    .back-link:hover {
+      background: var(--pink-dark);
+    }
+
+    .hero {
+      padding: 58px 22px 54px;
+      text-align: center;
+      background:
+        radial-gradient(ellipse at 15% 20%, #f5e4df 0%, transparent 42%),
+        radial-gradient(ellipse at 85% 80%, #eee5d8 0%, transparent 43%),
+        var(--cream);
+      border-bottom: 1px solid var(--line);
+    }
+
+    .eyebrow {
+      margin: 0 0 12px;
+      color: var(--pink-dark);
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+    }
+
+    h1, h2, h3 {
+      font-family: "Playfair Display", Georgia, serif;
+      font-weight: 500;
+      line-height: 1.35;
+    }
+
+    h1 {
+      margin: 0;
+      color: var(--heading);
+      font-size: clamp(36px, 6vw, 50px);
+    }
+
+    .hero-description {
+      max-width: 670px;
+      margin: 18px auto 0;
+      color: var(--muted);
+      font-size: 15px;
+    }
+
+    .hero-note {
+      display: inline-block;
+      margin-top: 22px;
+      padding: 8px 17px;
+      border: 1px solid var(--pink-border);
+      border-radius: 30px;
+      color: var(--pink-dark);
+      font-size: 13px;
+    }
+
+    main {
+      width: min(920px, 92%);
+      margin: 0 auto;
+      padding: 36px 0 60px;
+    }
+
+    .section {
+      margin: 28px 0;
+      padding: 28px 24px;
+      border: 1px solid var(--pink-border);
+      border-radius: 19px;
+      background: var(--white);
+      box-shadow: 0 10px 30px rgba(91,61,49,.06);
+    }
+
+    .section-heading {
+      display: flex;
+      align-items: center;
+      gap: 13px;
+      margin-bottom: 20px;
+    }
+
+    .number {
+      display: flex;
+      flex: 0 0 42px;
+      width: 42px;
+      height: 42px;
+      align-items: center;
+      justify-content: center;
+      border: 1px solid var(--gold);
+      border-radius: 50%;
+      background: #fffaf5;
+      color: var(--pink-dark);
+      font-family: "Playfair Display", Georgia, serif;
+      font-size: 16px;
+    }
+
+    .heading-box {
+      flex: 1;
+      min-width: 0;
+      padding: 11px 15px;
+      border: 1px solid #e4bdb6;
+      border-radius: 12px;
+      background: var(--pink-heading);
+    }
+
+    .heading-box h2 {
+      margin: 0;
+      color: var(--heading);
+      font-size: clamp(22px, 4vw, 28px);
+      line-height: 1.35;
+    }
+
+    .heading-box p {
+      margin: 3px 0 0;
+      color: #80665e;
+      font-size: 13px;
+      line-height: 1.5;
+    }
+
+    .section-intro {
+      margin: 0 0 18px;
+      color: var(--brown);
+    }
+
+    .resource-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0,1fr));
+      gap: 14px;
+      margin-top: 20px;
+    }
+
+    .resource-card {
+      padding: 20px;
+      border: 1px solid #ead4cd;
+      border-radius: 14px;
+      background: linear-gradient(145deg,#fffaf7,#fdf2ed);
+    }
+
+    .resource-symbol {
+      display: flex;
+      width: 43px;
+      height: 43px;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 12px;
+      border: 1px solid #dfb5a8;
+      border-radius: 13px;
+      background: #f5e5e1;
+      color: var(--pink-dark);
+      font-size: 21px;
+    }
+
+    .resource-card h3 {
+      margin: 0 0 8px;
+      color: #3b302b;
+      font-size: 20px;
+    }
+
+    .resource-card p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 14px;
+      line-height: 1.7;
+    }
+
+    .coming-soon {
+      display: inline-block;
+      margin-top: 15px;
+      padding: 6px 11px;
+      border: 1px solid var(--pink-border);
+      border-radius: 20px;
+      background: #fffaf7;
+      color: #92766e;
+      font-size: 12px;
+    }
+
+    .topic-list {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0,1fr));
+      gap: 10px;
+      margin-top: 18px;
+    }
+
+    .topic {
+      display: flex;
+      align-items: center;
+      gap: 11px;
+      padding: 13px 14px;
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      background: #fffaf7;
+      color: var(--brown);
+      font-size: 14px;
+    }
+
+    .topic-mark {
+      color: var(--pink-dark);
+      font-size: 18px;
+    }
+
+    .product-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0,1fr));
+      gap: 14px;
+      margin-top: 20px;
+    }
+
+    .product-card {
+      padding: 20px;
+      border: 1px solid #ead4cd;
+      border-radius: 14px;
+      background: #fffaf7;
+    }
+
+    .product-card h3 {
+      margin: 0 0 7px;
+      color: #3b302b;
+      font-size: 21px;
+    }
+
+    .product-card p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .product-card .coming-soon {
+      margin-top: 13px;
+    }
+
+    .notice {
+      margin-top: 20px;
+      padding: 17px 18px;
+      border-left: 4px solid var(--gold);
+      background: linear-gradient(100deg,#f5e3df,#f8eee5);
+      color: var(--brown);
+      font-size: 14px;
+    }
+
+    .closing {
+      padding: 28px 15px;
+      text-align: center;
+    }
+
+    .closing h2 {
+      margin: 0 0 10px;
+      color: var(--heading);
+      font-size: clamp(25px,5vw,32px);
+    }
+
+    .closing p {
+      max-width: 620px;
+      margin: 0 auto;
+      color: var(--muted);
+    }
+
+    .next-link {
+      display: inline-block;
+      margin-top: 18px;
+      padding: 11px 19px;
+      border-radius: 26px;
+      background: var(--pink);
+      color: white;
+      text-decoration: none;
+      font-size: 14px;
+    }
+
+    .next-link:hover {
+      background: var(--pink-dark);
+    }
+
+    /* Stopka — zachowuje kolorystykę platformy */
+    .site-footer {
+      padding: 32px 6% 25px;
+      border-top: 1px solid var(--line);
+      background: #f7eee9;
+    }
+
+    .footer-inner {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1.4fr;
+      align-items: center;
+      gap: 22px;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    .footer-brand {
+      color: #4c5037;
+      font-family: "Playfair Display", Georgia, serif;
+      font-size: 27px;
+      line-height: 1.2;
+      text-align: center;
+    }
+
+    .footer-brand span {
+      display: block;
+      color: var(--pink);
+      font-style: italic;
+    }
+
+    .footer-leader {
+      padding: 8px 15px;
+      border-left: 1px solid var(--line);
+      border-right: 1px solid var(--line);
+      text-align: center;
+    }
+
+    .footer-leader strong {
+      color: var(--pink);
+      font-family: "Playfair Display", Georgia, serif;
+      font-size: 25px;
+      font-weight: 400;
+    }
+
+    .footer-leader p {
+      margin: 2px 0;
+      color: var(--muted);
+      font-size: 12px;
+    }
+
+    .footer-motto {
+      margin-top: 10px !important;
+      color: var(--pink-dark) !important;
+    }
+
+    .contact-list {
+      display: grid;
+      gap: 8px;
+    }
+
+    .contact-list a {
+      color: var(--brown);
+      font-size: 12px;
+      text-decoration: none;
+      overflow-wrap: anywhere;
+    }
+
+    .contact-list a:hover {
+      color: var(--pink-dark);
+    }
+
+    .footer-logo {
+      padding: 22px 10px 10px;
+      text-align: center;
+    }
+
+    .footer-logo img {
+      display: block;
+      width: min(190px, 55%);
+      height: auto;
+      margin: 0 auto;
+    }
+
+    .copyright {
+      max-width: 1100px;
+      margin: 18px auto 0;
+      padding-top: 14px;
+      border-top: 1px solid var(--line);
+      color: var(--muted);
+      font-size: 12px;
+      text-align: center;
+    }
+
+    @media (max-width: 600px) {
+      .hero {
+        padding: 44px 20px;
+      }
+
+      main {
+        padding-top: 24px;
+      }
+
+      .section {
+        padding: 20px 15px;
+        margin: 22px 0;
+      }
+
+      .section-heading {
+        gap: 10px;
+      }
+
+      .number {
+        flex-basis: 36px;
+        width: 36px;
+        height: 36px;
+        font-size: 14px;
+      }
+
+      .heading-box {
+        padding: 10px 12px;
+      }
+
+      .heading-box h2 {
+        font-size: 22px;
+      }
+
+      .resource-grid,
+      .topic-list,
+      .product-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .resource-card,
+      .product-card {
+        padding: 17px;
+      }
+
+      .footer-inner {
+        grid-template-columns: 1fr;
+        gap: 17px;
+      }
+
+      .footer-leader {
+        border: 0;
+        border-top: 1px solid var(--line);
+        border-bottom: 1px solid var(--line);
+        padding: 17px 10px;
+      }
+
+      .footer-logo img {
+        width: min(170px,60%);
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <header class="topbar">
+    <a class="back-link" href="index.html">← Wróć do strony głównej</a>
+  </header>
+
+  <section class="hero">
+    <p class="eyebrow">Aloe Balance Flow · Dział 02</p>
+    <h1>Poznaj to, co polecasz</h1>
+    <p class="hero-description">
+      Wiedza pomaga budować zaufanie. Korzystaj z materiałów, poznawaj
+      produkty i ucz się rozmawiać o nich rzetelnie, spokojnie i bez presji.
+    </p>
+    <span class="hero-note">Wiedza · Świadome polecanie · Zaufanie</span>
+  </section>
+
+  <main>
+    <section class="section" id="materialy">
+      <div class="section-heading">
+        <div class="number">01</div>
+        <div class="heading-box">
+          <h2>Materiały dla klientek i Partnerek</h2>
+          <p>E-booki i przewodniki, do których będziesz mogła wracać.</p>
+        </div>
+      </div>
+
+      <p class="section-intro">
+        W tej części znajdziesz materiały wspierające rozmowy z klientkami
+        oraz rozwijanie własnej wiedzy produktowej.
+      </p>
+
+      <div class="resource-grid">
+        <article class="resource-card">
+          <div class="resource-symbol" aria-hidden="true">▤</div>
+          <h3>Niezbędnik Ambasadorki</h3>
+          <p>
+            E-book dla klientek VIP. Miejsce na praktyczne wskazówki,
+            informacje i materiały pomocne w poznawaniu produktów.
+          </p>
+          <span class="coming-soon">PDF · do podłączenia</span>
+        </article>
+
+        <article class="resource-card">
+          <div class="resource-symbol" aria-hidden="true">✧</div>
+          <h3>Przewodnik po C9</h3>
+          <p>
+            Materiał dla Przedsiębiorczyń, który pomoże uporządkować
+            informacje o programie Clean9 i przygotować się do rozmów.
+          </p>
+          <span class="coming-soon">PDF · do podłączenia</span>
+        </article>
+
+        <article class="resource-card">
+          <div class="resource-symbol" aria-hidden="true">❋</div>
+          <h3>Zdrowie Jelita</h3>
+          <p>
+            E-book poświęcony jelitom i codziennym nawykom wspierającym
+            zdrowie układu pokarmowego.
+          </p>
+          <span class="coming-soon">PDF · do podłączenia</span>
+        </article>
+      </div>
+    </section>
+
+    <section class="section" id="kompendium">
+      <div class="section-heading">
+        <div class="number">02</div>
+        <div class="heading-box">
+          <h2>Tematyczne kompendium wiedzy</h2>
+          <p>Wybierz temat, którego właśnie potrzebujesz.</p>
+        </div>
+      </div>
+
+      <p class="section-intro">
+        Materiały będą pogrupowane tematycznie, aby łatwo można było znaleźć
+        odpowiedź i dobrać informacje do potrzeb danej osoby.
+      </p>
+
+      <div class="topic-list">
+        <div class="topic"><span class="topic-mark">✿</span> Aloes i jego zastosowanie</div>
+        <div class="topic"><span class="topic-mark">✧</span> Odporność i codzienne nawyki</div>
+        <div class="topic"><span class="topic-mark">♡</span> Pielęgnacja i uroda</div>
+        <div class="topic"><span class="topic-mark">❋</span> Dzieci i rodzinna codzienność</div>
+        <div class="topic"><span class="topic-mark">◌</span> Jelita i trawienie</div>
+        <div class="topic"><span class="topic-mark">✿</span> Zdrowie kobiet</div>
+        <div class="topic"><span class="topic-mark">◇</span> Kolagen i pielęgnacja od środka</div>
+      </div>
+
+      <div class="notice">
+        Materiały edukacyjne mają pomagać w zdobywaniu wiedzy. Nie zastępują
+        diagnozy ani porady lekarza, a informacji o produktach nie należy
+        przedstawiać jako gwarancji efektów zdrowotnych.
+      </div>
+    </section>
+
+    <section class="section" id="produkty">
+      <div class="section-heading">
+        <div class="number">03</div>
+        <div class="heading-box">
+          <h2>Poznaj produkty</h2>
+          <p>Informacje produktowe i materiały do wykorzystania w praktyce.</p>
+        </div>
+      </div>
+
+      <div class="product-grid">
+        <article class="product-card">
+          <h3>Aloe</h3>
+          <p>Informacje o napojach aloesowych, składzie, sposobie użycia i dostępnych materiałach.</p>
+          <span class="coming-soon">Materiały · w przygotowaniu</span>
+        </article>
+
+        <article class="product-card">
+          <h3>Collagen</h3>
+          <p>Najważniejsze informacje o produkcie, składzie, stosowaniu i komunikacji z klientkami.</p>
+          <span class="coming-soon">Materiały · w przygotowaniu</span>
+        </article>
+
+        <article class="product-card">
+          <h3>Clean9 (C9)</h3>
+          <p>Przewodnik po programie, jego przebiegu, przygotowaniu i zasadach odpowiedzialnego informowania.</p>
+          <span class="coming-soon">Materiały · w przygotowaniu</span>
+        </article>
+
+        <article class="product-card">
+          <h3>DX4</h3>
+          <p>Materiały o programie, jego założeniach i sposobie korzystania zgodnie z instrukcją.</p>
+          <span class="coming-soon">Materiały · w przygotowaniu</span>
+        </article>
+
+        <article class="product-card">
+          <h3>Pozostałe produkty</h3>
+          <p>Miejsce na kolejne produkty z oferty Forever i uporządkowane materiały produktowe.</p>
+          <span class="coming-soon">Materiały · w przygotowaniu</span>
+        </article>
+      </div>
+    </section>
+
+    <section class="section" id="korzystanie">
+      <div class="section-heading">
+        <div class="number">04</div>
+        <div class="heading-box">
+          <h2>Jak korzystać z tej biblioteki?</h2>
+          <p>Najpierw wiedza, potem rozmowa.</p>
+        </div>
+      </div>
+
+      <ol>
+        <li>Wybierz temat związany z potrzebą klientki.</li>
+        <li>Przeczytaj materiał i sprawdź informacje o produkcie.</li>
+        <li>Rozmawiaj rzeczowo, bez obiecywania konkretnych efektów.</li>
+        <li>Jeśli nie znasz odpowiedzi, sprawdź ją w wiarygodnym źródle zamiast zgadywać.</li>
+      </ol>
+
+      <div class="notice">
+        Nie musisz znać całej oferty od pierwszego dnia. Uzupełniaj wiedzę
+        stopniowo i wracaj do tej strony, kiedy będzie Ci potrzebna.
+      </div>
+    </section>
+
+    <section class="closing">
+      <h2>Wiedza buduje pewność siebie.</h2>
+      <p>
+        Poznawaj produkty krok po kroku. W kolejnych działach znajdziesz
+        materiały wspierające Twój rozwój i pracę z klientkami.
+      </p>
+      <a class="next-link" href="rozwoj.html">Przejdź do działu Rozwój →</a>
+    </section>
+  </main>
+
+  <footer>
+    <div class="site-footer">
+      <div class="footer-inner">
+        <div class="footer-brand">
+          Aloe Balance <span>Flow</span>
+        </div>
+
+        <div class="footer-leader">
+          <strong>Joanna</strong>
+          <p>Liderka Aloe Balance</p>
+          <p class="footer-motto">Żyj w harmonii ze sobą</p>
+        </div>
+
+        <div class="contact-list">
+          <div>✉ &nbsp;<a href="mailto:joanna.aloe@gmail.com">joanna.aloe@gmail.com</a></div>
+          <div>◎ &nbsp;<a href="https://www.instagram.com/naturalnie.joanna/" target="_blank" rel="noopener noreferrer">IG: @naturalnie.joanna</a></div>
+          <div>▤ &nbsp;<a href="https://substack.com/@kobietawharmonii" target="_blank" rel="noopener noreferrer">Listy Kobiety w Harmonii na Substack</a></div>
+          <div>☏ &nbsp;<a href="https://chat.whatsapp.com/FHHUXIi4fAL4bCsnCno7LB?s=cl&amp;p=a&amp;mlu=4&amp;ilr=4" target="_blank" rel="noopener noreferrer">Grupa Partnerek Aloe Balance na WhatsApp</a></div>
+        </div>
+      </div>
+
+      <div class="footer-logo">
+        <img src="file_00000000d9788210b059a6a6f59ae0eb.png" alt="Logo Aloe Balance Flow">
+      </div>
+
+      <div class="copyright">
+        © <span id="year">2026</span> Aloe Balance Flow · Stworzone z uważnością
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+</body>
+  </html>
+  
